@@ -1,11 +1,9 @@
-from math import inf
 import os;
 import argparse;
 import csv
 import time;
 import numpy as np;
 import matplotlib.pyplot as plt;
-from numpy.polynomial.polynomial import polyfit;
 from scipy.optimize import curve_fit;
 
 def is_file_valid(filename) -> bool:
