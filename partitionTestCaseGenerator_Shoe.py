@@ -28,13 +28,10 @@ def main():
     return
   
   # Otherwise, print test cases to file
-
   # Set a total value range
   maxCoinValue = 25
-
   # Set the maximum number of coin values to generate from input
   maxNumCoins = args.maxNumCoins
-
   # Set a test case counter
   testcaseNumber = 0
 
@@ -44,7 +41,6 @@ def main():
   # We start with three coins because this problem is trivial with 2 coins
   for numCoins in range(3, maxNumCoins + 1):
     # Loop through the given number of test cases for each coin quantity
-    #maxCoinQuantity = 50 * numCoins
     for test in range(args.size):
       # Write the test case number
       testcaseNumber += 1
@@ -54,10 +50,6 @@ def main():
         # Write the coin value
         # We do not include pennies as they somewhat trivialize this problem
         args.file.write(f" {random.randint(2, maxCoinValue)}")
-        # Write the coin quantity
-        # args.file.write(f" {random.randint(1, maxCoinQuantity)}")
-        #args.file.write(f" {random.randint(10, maxCoinQuantity)}")
-        # args.file.write(f" {maxCoinQuantity}")
       # Move to the next line
       args.file.write("\n")
 
