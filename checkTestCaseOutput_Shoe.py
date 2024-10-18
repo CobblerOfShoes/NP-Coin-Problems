@@ -10,7 +10,6 @@ def is_file_valid(filename) -> bool:
 
 def main():
   parser = argparse.ArgumentParser()
-  pparser = argparse.ArgumentParser()
   parser.add_argument("-f", dest="infile", required=True,
                       help="Input file with knapsack problem test cases." + "\n" +
                            "Data should be in the format: TestcaseNo., Coin1,  Coin2, Coin3...",
@@ -59,6 +58,7 @@ def main():
             allResultsPass = False
             faultyResults.append(testcaseNumber)
 
+  # Provide a corresponding output based on evaluations
   if (allResultsPass):
     print("All results are valid.")
   else:
