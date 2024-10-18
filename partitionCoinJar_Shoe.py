@@ -80,7 +80,7 @@ def find_coin_counts(testcaseNumber: int, jarOfCoins: list[int]) \
   totalTime_ns = endTime_ns - startTime_ns
 
   # Generate testcase result
-  return {testcaseNumber: (splitPiles, totalTime_ns, numCoins)}
+  return {testcaseNumber: (splitPiles, totalTime_ns/1000, numCoins)}
 
 '''
 partitionCoinjar -- takes in testcases from a user given file and plots the computation time.
@@ -179,13 +179,15 @@ def main():
   y_fit = exponential_funct(x_fit, *params)
 
   # Plot the successes and failures
-  plt.plot(successXPoints, successYPoints, 'o')
-  plt.plot(failureXPoints, failureYPoints, 'x')
+  successData, = plt.plot(successXPoints, successYPoints, 'o', label='Solution Found')
+  failureData, = plt.plot(failureXPoints, failureYPoints, 'x', label='No Solution')
   # Plot the curve fit to show time complexity
-  plt.plot(x_fit, y_fit, color='red', label='Fitted Exponential Curve')
+  line, = plt.plot(x_fit, y_fit, color='red', label='Fitted Exponential Curve')
   plt.title("NP-Complete Coin Jar Partition Problem")
   plt.xlabel("Number of Coins in the Jar")
   plt.ylabel("Computation Time per Testcase (Nanoseconds)")
+  # Annotate the graph
+  plt.legend()
   # If outimage argument was passed, save the plot
   if (args.outimage):
     plt.savefig(args.outimage)  
