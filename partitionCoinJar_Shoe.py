@@ -91,7 +91,7 @@ Outputs: A file containing generated results and a displayed pyplot
 def main():
   parser = argparse.ArgumentParser()
   parser.add_argument("-f", dest="filename", required=True,
-                      help="Input file with knapsack problem test cases." + "\n" +
+                      help="Input file with coin jar problem test cases." + "\n" +
                            "Data should be in the format: TestcaseNo., Coin1,  Coin2, Coin3...",
                       metavar="FILE")
   parser.add_argument("-o", "--out-file", dest="outfile", required=True,
